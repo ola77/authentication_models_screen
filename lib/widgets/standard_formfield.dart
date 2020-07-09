@@ -31,7 +31,8 @@ class StandardFormField extends StatelessWidget {
                   hintStyle: TextStyle(
                       fontSize: 16.0,
                       color: Color(0xff9E224D),
-                      fontFamily: 'cairo')),
+                      fontFamily: 'Cairo'),
+              ),
             ),
           ),
         ),

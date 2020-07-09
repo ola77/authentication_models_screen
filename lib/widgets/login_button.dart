@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
+  final String hintText;
+
+  LoginButton({this.hintText});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -15,7 +19,7 @@ class LoginButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'تسجيل الدخول',
+            hintText,
             style: TextStyle(
               fontSize: 18.0,
               color: Colors.white,

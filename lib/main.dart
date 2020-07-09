@@ -1,7 +1,5 @@
+import 'package:authentication_models_screen/screens/authentication.dart';
 import 'package:flutter/material.dart';
-
-import 'file:///C:/Users/PC/AndroidStudioProjects/authentication_models_screen/lib/screens/authentication.dart';
-
 void main() {
   runApp(MyApp());
 }
