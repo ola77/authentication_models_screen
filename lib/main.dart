@@ -1,4 +1,4 @@
-import 'package:authentication_models_screen/screens/authentication.dart';
+import 'package:authentication_models_screen/widgets/account_confirmation.dart';
 import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Authentication(),
+      home: AccountConfirmation(),
     );
   }
 }
