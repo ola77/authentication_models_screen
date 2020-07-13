@@ -8,8 +8,7 @@ class PasswordRecovery extends StatefulWidget {
 class _PasswordRecoveryState extends State<PasswordRecovery> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Stack(
         children: <Widget>[
           Container(
             color: Color(0xff9DA0A7),
@@ -155,7 +154,7 @@ class _PasswordRecoveryState extends State<PasswordRecovery> {
             ),
           ),
         ],
-      ),
+
     );
   }
 }

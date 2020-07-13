@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CreateNewPassword extends StatelessWidget {
-  final String hintAddress;
-  final String hintOldPasswordLable;
-  final String hintOldPassword;
-  final String hintNewPasswordLable;
-  final String hintNewPassword;
+class CustomAlaretDialouge extends StatelessWidget {
+  @override
+  final String hintText;
+  final String hintTextFieldLabel;
+  final String hintTextField;
+  final String confirmTextField;
   final String hintTime;
   final String hintResend;
-  final String confirmTextField;
 
-  const CreateNewPassword({Key key,
-    this.hintAddress,
-    this.hintOldPasswordLable,
-    this.hintOldPassword,
-    this.hintNewPasswordLable,
-    this.hintNewPassword,
-    this.hintTime,
-    this.hintResend,
-    this.confirmTextField})
-      : super(key: key);
+  CustomAlaretDialouge(
+      {this.hintText,
+      this.hintTextFieldLabel,
+      this.hintTextField,
+      this.confirmTextField,
+      this.hintTime,
+      this.hintResend});
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +35,10 @@ class CreateNewPassword extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
                       topRight: Radius.circular(20.0))),
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height * .10,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * .10,
               child: Text(
-                hintAddress,
+                hintText,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -58,28 +48,16 @@ class CreateNewPassword extends StatelessWidget {
             content: Directionality(
               textDirection: TextDirection.rtl,
               child: Container(
-                height: MediaQuery
-                    .of(context)
-                    .size
-                    .height * .3,
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
+                height: MediaQuery.of(context).size.height * .3,
+                width: MediaQuery.of(context).size.width,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .height * .05,
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * .65,
+                      height: MediaQuery.of(context).size.height * .05,
+                      width: MediaQuery.of(context).size.width * .65,
                       child: Text(
-                        hintOldPasswordLable,
+                        hintTextFieldLabel,
                         style: TextStyle(
                           fontFamily: 'Cairo',
                           color: Color(0xff0D0C00),
@@ -88,16 +66,13 @@ class CreateNewPassword extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .height * .05,
+                      height: MediaQuery.of(context).size.height * .05,
                       child: TextFormField(
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(5),
                           fillColor: Color(0xffF6F7FC),
                           filled: true,
-                          hintText: hintOldPassword,
+                          hintText: hintTextField,
                           hintStyle: TextStyle(
                             fontFamily: 'cairo',
                             color: Colors.black,
@@ -108,74 +83,20 @@ class CreateNewPassword extends StatelessWidget {
                                 color: Color(0xffE3E3EE),
                               ),
                               borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
+                                  BorderRadius.all(Radius.circular(46))),
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: Color(0xffE3E3EE), width: 2.0),
                               borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
+                                  BorderRadius.all(Radius.circular(46))),
                           border: OutlineInputBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
+                                  BorderRadius.all(Radius.circular(46))),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .height * .05,
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * .65,
-                      child: Text(
-                        hintNewPasswordLable,
-                        style: TextStyle(
-                          fontFamily: 'Cairo',
-                          color: Color(0xff0D0C00),
-                        ),
-                        textDirection: TextDirection.rtl,
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .height * .05,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(5),
-                          fillColor: Color(0xffF6F7FC),
-                          filled: true,
-                          hintText: hintNewPassword,
-                          hintStyle: TextStyle(
-                            fontFamily: 'cairo',
-                            color: Colors.black,
-                            fontSize: 12.0,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xffE3E3EE),
-                              ),
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xffE3E3EE), width: 2.0),
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(46))),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * .9,
+                      width: MediaQuery.of(context).size.width * .9,
                       child: Row(
                         children: [
                           Text(
@@ -210,10 +131,7 @@ class CreateNewPassword extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: SizedBox(
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width * .30,
+                  width: MediaQuery.of(context).size.width * .30,
                   child: Container(
                     child: Text(
                       "عوده",
@@ -229,18 +147,12 @@ class CreateNewPassword extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * .04,
+                width: MediaQuery.of(context).size.width * .04,
               ),
               InkWell(
                 onTap: () {},
                 child: SizedBox(
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width * .30,
+                  width: MediaQuery.of(context).size.width * .30,
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(

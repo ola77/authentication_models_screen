@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
-class AccountConfirmation extends StatefulWidget {
-  @override
-  _AccountConfirmationState createState() => _AccountConfirmationState();
-}
+class AccountConfirmation extends StatelessWidget {
+  final String hintTextCard;
+  final String confirmTextField;
+  final String hintTime;
+  final String hintResend;
+  final String hintTextLable;
+  final String hintText;
 
-class _AccountConfirmationState extends State<AccountConfirmation> {
+  const AccountConfirmation({Key key, this.hintTextCard,
+    this.confirmTextField,
+    this.hintTime,
+    this.hintResend, this.hintTextLable, this.hintText})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +36,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * .10,
                 child: Text(
-                  'انشاء كلمه مرور جديدة',
+                  hintTextCard,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -47,7 +55,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                         height: MediaQuery.of(context).size.height * .055,
                         width: MediaQuery.of(context).size.width * .65,
                         child: Text(
-                          'كود التفعيل',
+                          hintTextLable,
                           style: TextStyle(
                             fontFamily: 'Cairo',
                             color: Color(0xff0D0C00),
@@ -62,7 +70,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                             contentPadding: EdgeInsets.all(5),
                             fillColor: Color(0xffF6F7FC),
                             filled: true,
-                            hintText: " أكتب كود التفعيل هنا",
+                            hintText: hintText,
                             hintStyle: TextStyle(
                               fontFamily: 'cairo',
                               color: Colors.black,
@@ -90,7 +98,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                         child: Row(
                           children: [
                             Text(
-                              '00:49',
+                              hintTime,
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 color: Color(0xff9E224D),
@@ -102,7 +110,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                               width: 5,
                             ),
                             Text(
-                              'أعاده ارسال',
+                              hintResend,
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 color: Color(0xff9E224D),
@@ -150,7 +158,7 @@ class _AccountConfirmationState extends State<AccountConfirmation> {
                           ),
                           color: Color(0xff9E224D)),
                       child: Text(
-                        "تفعيل",
+                        confirmTextField,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontFamily: 'Cairo',
